@@ -51,7 +51,7 @@ export default {
     login() {
       axios.defaults.xsrfCookieName = 'csrftoken';
       axios.defaults.xsrfHeaderName = 'X-CSRFToken';
-      axios.post("http://localhost:8000/api/token/", {
+      axios.post("http://localhost:8000/login/", {
         username: this.username,
         password: this.password,
       }).then((res) => {
@@ -59,6 +59,7 @@ export default {
         if (res.status == 200) {
           localStorage.tokenAccess = res.data.access
           localStorage.tokenRefresh = res.data.refresh
+          localStorage.user_id = res.data.usuario_id
           this.$router.push("/tasks");
         } else {
           alert("Login failed");
