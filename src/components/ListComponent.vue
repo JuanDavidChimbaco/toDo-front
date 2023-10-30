@@ -218,9 +218,13 @@ export default {
                 if (result.isConfirmed) {
                     this.deleteTask2(id)
                     Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
+                        {
+                            icon: 'success',
+                            title: 'Deleted!',
+                            text: 'Your file has been deleted.',
+                            confirmButtonText: 'Ok',
+                            confirmButtonColor: '#3085d6',
+                       }
                     )
                 }
             })
