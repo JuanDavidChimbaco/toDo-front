@@ -21,6 +21,21 @@ const routes = [
       }
     ],
   },
+  {
+    path: '/login',
+        name: 'login',
+        component: () => import('@/views/Login-view.vue'),
+  },
+  {
+    path: '/register',
+        name: 'register',
+        component: () => import('@/views/Register-view.vue'),
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'notFound',
+    component: () => import('@/views/NotFound-view.vue'),
+  },
 ]
 
 const router = createRouter({
